@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh" data-bs-theme>
+    <head>
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/theme_btn.css" rel="stylesheet">
+        <link href="/css/my_style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Posts | InfAstra's Garden</title>
+        <script src="/scripts/theme.js"></script>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <div id="navbar"></div>
+        <script>
+        fetch("/scripts/navbar.html")
+            .then(r => r.text())
+            .then(html => document.getElementById('navbar').innerHTML = html);
+        </script>
+        </nav>
+
+        <div class="container-fluid" style="max-width: min(100%, 700px);">
+            <div class="container" style="margin-top: 5%; text-align: left;">
+                <h1><b>Posts</b></h1>
+                <p>主要存一些乱七八糟写的东西。</p>
+                <hr>
+        <footer style="text-align: center;">
+            <p style="margin-bottom: 1%; font-size: small;">&#169 2026 InfAstra</p>
+        </footer>
+        </div>
+    </body>
+        <script src="../scripts/bootstrap.js"></script>
+</html>

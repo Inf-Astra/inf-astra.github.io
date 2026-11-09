@@ -1,0 +1,17 @@
+[data-bs-theme = "dark"] .vertical_line
+{
+  border-left: 4px solid #2F2F2F;
+  padding-left: 2rem;
+}
+
+[data-bs-theme = "light"] .vertical_line
+{
+    border-left: 4px solid #D0D0D0;
+    padding-left: 2rem;
+}
+
+.circle-image {
+    border-radius: 50%; /* 圆形效果 */
+    overflow: hidden;   /* 防止溢出显示 */
+    object-fit: cover;  /* 保持图片比例填充容器 */
+}

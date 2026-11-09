@@ -1,0 +1,7 @@
+[data-bs-theme="light"] #current_theme {
+    content: url("/assets/icons/moon-stars-fill.svg");
+}
+
+[data-bs-theme="dark"] #current_theme {
+    content: url("/assets/icons/brightness-high.svg");
+}

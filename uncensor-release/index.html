@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh" data-bs-theme>
+    <head>
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/theme_btn.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>简介 | 《蔚蓝档案》反和谐</title>
+        <script src="/scripts/theme.js"></script>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <div id="navbar"></div>
+        <script>
+        fetch("/scripts/navbar.html")
+            .then(r => r.text())
+            .then(html => document.getElementById('navbar').innerHTML = html);
+        </script>
+        <main class="flex-grow-1">
+            <div class="container-fluid" style="max-width: min(100%, 700px);">
+                <div class="container" style="margin-top: 5%; text-align: left;">
+                    <h1><b>BlueArchive Uncensor</b></h1>
+                    <p>致力于还原《蔚蓝档案》简中服中与外服有差异的内容。</p>
+                    <hr>
+                </div>
+                <div class="container">
+                    <a id="#section1"><h3><b>修改内容</b></h3></a>
+                    <p>主界面</p>
+                    <img src="../assets/images/home.png" alt="home" class="img-thumbnail">
+                </div>
+                <details>
+                    <summary>展开更多</summary>
+                    <div class="content">
+                        <div class="container" style="margin-top: 2%; text-align: left;">
+                            <p>编队</p>
+                            <img src="../assets/images/formation.png" alt="formation" class="img-thumbnail">
+                            <hr>
+                        </div>
+
+                        <div class="container">
+                            <p>MomoTalk 界面</p>
+                            <img src="../assets/images/momotalk_2.png" alt="momotalk_2" class="img-thumbnail">
+                            <hr>
+                        </div>
+
+                        <div class="container">
+                            <p>战斗</p>
+                            <img src="../assets/images/battle-2.png" alt="battle-2" class="img-thumbnail">
+                            <a style="font-size: xx-small;"><del>骗你的，暴击了还得凹安定（</del></a>
+                            <hr>
+                        </div>
+
+                        <div class="container">
+                            <p>学员列表</p>
+                            <img src="../assets/images/character-collect.png" alt="character-collect" class="img-thumbnail">
+                            <hr>
+                        </div>
+
+                        <div class="container">
+                            <p>日程</p>
+                            <img src="../assets/images/schedule-2.png" alt="schedule" class="img-thumbnail">
+                            <hr>
+                        </div>
+                        <div class="container">
+                            <p>立绘（部分）</p>
+                            <img src="../assets/images/character-info-2.png" alt="ch1" class="img-thumbnail">
+                            <img src="../assets/images/character-1.png" alt="ch2" class="img-thumbnail">
+                        </div>
+                    </div>
+                </details>
+                <br>
+                <div class="container-fluid">
+                    <hr>
+                    <a id="#section2"><h3><b>获取最新 Release</b></h3></a>
+                    <div id="release-info">
+                        <p>少女祈祷中...</p>
+                    </div>
+                    <h4><b>GitHub 无法访问？</b></h4>
+                    <a href="https://ngtc233.lanzouq.com/b0umk0nyf">点这里下载（密码:7psh）</a>  
+                    <hr>
+                </div>
+                <div class="container-fluid">
+                    <a id="#section3"><h3><b>使用方法</b></h3></a>
+                    <a href="https://www.bilibili.com/video/BV1cvng6QEcY/">前往 bilibili 观看视频教程</a>
+                    <br>
+                    <a href="https://github.com/InfiniteAstra/Blue-Archive-Uncensor-Reborn#%E4%B8%89%E6%9B%BF%E6%8D%A2%E6%96%B9%E6%B3%95">前往 GitHub 查看文字教程</a>
+                    <hr>
+                </div>
+                <div class="container-fluid">
+                    <a id="#section4"><h3><b>声明</b></h3></a>
+                    <p>使用该资源前，务必知悉以下内容：</p>
+                    <p><b>本项目仅供学习和展示用途。</b>所有通过本项目获取的内容均应仅用于合法和正当的目的。
+                       开发者不对任何因使用本项目而引发的直接或间接损失、损害、法律责任或其他后果承担任何责任。
+                       <b>用户在使用本项目时需自行承担风险</b>，并确保遵守所有相关法律法规。
+                       严禁将本项目用于任何未经授权或非法的活动。<b>用户应对自身的行为负责。</b>
+                    </p>
+                </div>
+            </div>
+            </main>
+        <footer style="text-align: center;">
+            <p style="margin-bottom: 1%; font-size: small;">&#169 2026 InfAstra</p>
+        </footer>
+        <script src="../scripts/bootstrap.js"></script>
+
+        <script>
+        const owner = 'InfiniteAstra';
+        const repo = 'Blue-Archive-Uncensor-Reborn';
+        
+        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
+        const infoDiv = document.getElementById('release-info');
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络请求失败或仓库不存在');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // 从返回的 JSON 数据中提取信息
+                const version = data.tag_name || '未知版本';
+                const releaseName = data.name || '';
+                const releaseUrl = data.html_url;
+                const publishedDate = new Date(data.published_at).toLocaleDateString('zh-CN');
+
+                // 构建要显示的 HTML 内容
+                infoDiv.innerHTML = `
+                    <p><strong>最新版本：</strong> ${version} ${releaseName ? `(${releaseName})` : ''}</p>
+                    <p><strong>发布日期：</strong> ${publishedDate}</p>
+                    <p><a href="${releaseUrl}" target="_blank" rel="noopener noreferrer">前往 GitHub 下载</a></p>
+                `;
+            })
+            .catch(error => {
+                console.error('获取发行版信息失败:', error);
+                infoDiv.innerHTML = '<p>暂时无法获取版本信息，请稍后重试。</p>';
+            });
+        </script>
+    </body>
+</html>

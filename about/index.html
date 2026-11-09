@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh" data-bs-theme>
+    <head>
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/font.css" rel="stylesheet">
+        <link href="/css/my_style.css" rel="stylesheet">
+        <link href="/css/theme_btn.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About | InfAstra's Garden</title>
+        <script src="/scripts/theme.js"></script>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <div id="navbar"></div>
+        <script>
+        fetch("/scripts/navbar.html")
+            .then(r => r.text())
+            .then(html => document.getElementById('navbar').innerHTML = html);
+        </script>
+        </nav>
+
+        <div class="container-fluid" style="max-width: min(100%, 700px);">
+            <div class="container" style="margin-top: 5%;">
+                <h1><b>About</b></h1>
+                <a>这世间，有一个名为「你」的奇迹。</a>
+                <hr>
+            </div>
+
+            <div class="container-fluid d-flex">
+                <img src="/assets/images/icon.png" class="circle-image" style="max-width: 35%; margin-left: 2%;">
+                <div class="container-fluid" style="max-width: 30%; margin-top: 10%; margin-left: 10%;">
+                    <a style="font-size: xx-large;"><b>InfAstra</b></a>
+                    <a style="font-size: large;"><br>InfiniteAstra</a>
+                </div>
+            </div>
+
+            <div class="container" style="max-width: inherit;">
+                <hr>
+                <h3><b>关于联系方式</b></h3>
+                <ul>
+                    <li>Email: 
+                        <a href="mailto:infastra@outlook.com" style="text-decoration: none;">infastra@outlook.com</a>
+                    </li>
+                    <li>bilibili: 
+                        <a href="https://space.bilibili.com/496380245" style="text-decoration: none;">InfAstra_</a>
+                    </li>
+                        <li>GitHub: 
+                        <a href="https://github.com/InfiniteAstra" style="text-decoration: none;">InfiniteAstra</a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h3><b>关于签名</b></h3>
+                <p style="text-align: center; font-family: noto-serif, serif">这世间，有一个名为「你」的奇迹。</p>
+                <p>改自《今、歩き出す君へ》的一句歌词。原歌词是：</p>
+                <p style="text-align: center; font-family: noto-serif, serif;">世界でひとつの君という奇跡が</p>
+                <p>相当治愈的一首歌，推荐去听一下，相信你也会喜欢上这首歌（）</p>
+
+                <hr>
+                <h3><b>关于我自己</b></h3>
+                <p>杭州某双非计科大一，啥也不会，被同级的 OI 爷吊打</p>
+
+                <hr>
+                <h3><b>关于这个网站</b></h3>
+                <p>算是 CS50x 的课程作业（？）</p>
+                <p style="font-size: xx-small; text-align: right;"><del>学了一天前端手写的，你敢和它对视三秒吗</del></p>
+            </div>
+
+
+        <footer style="text-align: center;">
+            <p style="margin-bottom: 1%; font-size: small;">&#169 2026 InfAstra</p>
+        </footer>
+        </div>
+    </body>
+        <script src="../scripts/bootstrap.js"></script>
+</html>
